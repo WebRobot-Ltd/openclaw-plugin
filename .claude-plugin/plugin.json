@@ -1,0 +1,15 @@
+{
+  "name": "openclaw",
+  "description": "WebRobot ETL platform via OpenClaw — pipeline builder, stage catalog, job & dataset management, agentic wizard. Backed by the hosted WebRobot MCP.",
+  "version": "0.1.0",
+  "author": { "name": "WebRobot Ltd", "email": "ceo@webrobot.eu" },
+  "homepage": "https://webrobot.eu",
+  "repository": "https://github.com/WebRobot-Ltd/openclaw-plugin",
+  "license": "MIT",
+  "mcpServers": {
+    "webrobot": {
+      "type": "http",
+      "url": "https://mcp.webrobot.eu/mcp"
+    }
+  }
+}
