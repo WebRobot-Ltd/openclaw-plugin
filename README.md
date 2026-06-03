@@ -1,21 +1,23 @@
 # OpenClaw — WebRobot plugin
 
-The **WebRobot** ETL platform packaged as an OpenClaw / Claude Code plugin:
-**10 skills** (invokable as `/` slash commands) plus the hosted **WebRobot MCP**
-(33 tools) — pipeline builder, stage catalog, job & dataset management, and the
-agentic designer wizard.
+The **WebRobot** ETL platform packaged as an **OpenClaw** plugin: **10 skills**
+(invokable as `/` slash commands) plus the hosted **WebRobot MCP** (33 tools) —
+pipeline builder, stage catalog, job & dataset management, and the agentic
+designer wizard.
 
-Unlike the local-MCP variant, this plugin uses the **hosted MCP** at
-`https://mcp.webrobot.eu/mcp` — no local Python process or dependency.
+This plugin uses the **hosted MCP** at `https://mcp.webrobot.eu/mcp` — no local
+process or dependency to install.
 
-## Install (Claude Code)
+## Install (OpenClaw)
+
+Add this repository as a plugin source in OpenClaw and install `openclaw`:
 
 ```
 /plugin marketplace add https://github.com/WebRobot-Ltd/openclaw-plugin
 /plugin install openclaw
 ```
 
-Claude Code loads the skills under `/` and connects the `webrobot` MCP server
+OpenClaw loads the skills under `/` and connects the `webrobot` MCP server
 (HTTP) on demand. Nothing to install locally.
 
 ## Skills
@@ -28,16 +30,15 @@ Claude Code loads the skills under `/` and connects the `webrobot` MCP server
 
 ```
 .claude-plugin/plugin.json   Plugin manifest (name, mcpServers → hosted MCP)
-.mcp.json                    Stand-alone MCP entry (local dev / other clients)
+.mcp.json                    Stand-alone MCP entry (other MCP clients)
 skills/<name>/SKILL.md       Self-contained skills
 ```
 
 ## Links
 
 - WebRobot: https://webrobot.eu · Portal: https://portal.webrobot.eu
-- MCP endpoint: https://mcp.webrobot.eu/mcp (see https://portal.webrobot.eu/mcp)
-- Claude Code plugin (local MCP variant): https://github.com/WebRobot-Ltd/webrobot-claude-plugin
+- MCP endpoint: https://mcp.webrobot.eu/mcp (docs: https://portal.webrobot.eu/mcp)
 
-> NOTE: this follows the Claude Code plugin format (`.claude-plugin/plugin.json`
-> + `skills/`). If the OpenClaw marketplace expects a different manifest, adjust
-> the manifest only — the `skills/` are format-agnostic markdown.
+> The plugin layout follows the open `.claude-plugin/plugin.json` + `skills/`
+> convention. If the OpenClaw marketplace expects a different manifest, only the
+> manifest changes — the `skills/` are format-agnostic markdown.
